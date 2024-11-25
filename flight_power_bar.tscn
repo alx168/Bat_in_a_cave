@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dadcenx5wy85t"]
+
+[ext_resource type="Script" path="res://flight_power_bar.gd" id="1_fk83v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km6y4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7east"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj20i"]
+bg_color = Color(0.443439, 0.410896, 0.168653, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1accr"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="FlightBar" type="ProgressBar"]
+z_index = 1
+offset_right = 240.0
+offset_bottom = 25.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_km6y4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7east")
+value = 50.0
+show_percentage = false
+script = ExtResource("1_fk83v")
+
+[node name="FlightCharge" type="ProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hj20i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1accr")
+value = 100.0
+show_percentage = false

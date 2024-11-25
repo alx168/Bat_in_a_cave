@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dxqdxf5isg6nd"]
+[gd_scene load_steps=12 format=4 uid="uid://dxqdxf5isg6nd"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_o0msn"]
 [ext_resource type="Texture2D" uid="uid://7vfltxojds2x" path="res://art/entities/playerGrey_up1.png" id="2_hiiva"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brhs3i3aftj5u" path="res://art/entities/playerGrey_walk1.png" id="4_p6duc"]
 [ext_resource type="Texture2D" uid="uid://c1kq6g75g4yeo" path="res://art/entities/playerGrey_walk2.png" id="5_jfjgo"]
 [ext_resource type="Texture2D" uid="uid://kbf18m2j0122" path="res://art/tiles/kenney_abstract-platformer/Tilesheet/tilesheet_complete.png" id="6_n5a5q"]
+[ext_resource type="PackedScene" uid="uid://dadcenx5wy85t" path="res://flight_power_bar.tscn" id="7_i8k7v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5deev"]
 radius = 27.0
@@ -323,6 +324,20 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dn5vy")
 animation = &"walk"
 metadata/_edit_group_ = true
+
+[node name="FlightBar" parent="CharacterBody2D" instance=ExtResource("7_i8k7v")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -77.0
+offset_right = 104.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(426, 429)
