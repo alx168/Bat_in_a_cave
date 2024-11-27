@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkhjjje8frf1a"]
+
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_omsxw"]
+[ext_resource type="Script" path="res://scripts/menus/control_configuration_option.gd" id="1_p1kyo"]
+[ext_resource type="Script" path="res://scripts/menus/volume_option.gd" id="2_st0sm"]
+
+[node name="MainMenuContainer" type="Node"]
+script = ExtResource("1_omsxw")
+
+[node name="StartLevelOption" type="LineEdit" parent="." groups=["menu_options"]]
+offset_left = 452.0
+offset_top = 140.0
+offset_right = 672.0
+offset_bottom = 266.0
+text = "Play"
+alignment = 1
+editable = false
+selecting_enabled = false
+
+[node name="ControlConfigurationOption" type="LineEdit" parent="." groups=["menu_options"]]
+offset_left = 453.0
+offset_top = 287.0
+offset_right = 673.0
+offset_bottom = 413.0
+text = "Configure Input Button"
+alignment = 1
+editable = false
+selecting_enabled = false
+script = ExtResource("1_p1kyo")
+
+[node name="VolumeSliderLabel" type="RichTextLabel" parent="."]
+offset_left = 522.0
+offset_top = 441.0
+offset_right = 742.0
+offset_bottom = 567.0
+scale = Vector2(1, 0.600001)
+text = "Volume
+Why the heck is this getting squished when I resize the label box"
+script = ExtResource("1_p1kyo")
+
+[node name="VolumeSliderOption" type="HSlider" parent="." groups=["menu_options"]]
+offset_left = 454.0
+offset_top = 463.0
+offset_right = 674.0
+offset_bottom = 479.0
+value = 30.0
+editable = false
+scrollable = false
+script = ExtResource("2_st0sm")
