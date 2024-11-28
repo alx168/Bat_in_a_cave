@@ -26,7 +26,6 @@ func _ready() -> void:
 
 # handle inputs and visuals
 func _process(delta: float) -> void:
-	#print(flight_charge)
 	if Input.is_action_just_pressed("button_press"):
 		input_flap = true
 	if Input.is_action_pressed("button_press") and flight_charge < max_flight_charge:

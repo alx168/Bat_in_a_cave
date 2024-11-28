@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkhjjje8frf1a"]
+
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_omsxw"]
+[ext_resource type="Script" path="res://scripts/menus/control_configuration_option.gd" id="1_p1kyo"]
+[ext_resource type="Script" path="res://scripts/menus/start_level_option.gd" id="2_id2tn"]
+[ext_resource type="Script" path="res://scripts/menus/volume_option.gd" id="2_st0sm"]
+[ext_resource type="StyleBox" uid="uid://5gefmprixb1d" path="res://art/menu/button_focused.tres" id="3_p83nl"]
+[ext_resource type="StyleBox" uid="uid://6gvbqp75xg26" path="res://art/menu/button_normal.tres" id="5_yg6ns"]
+
+[node name="MainMenuContainer" type="Node"]
+script = ExtResource("1_omsxw")
+
+[node name="StartLevelOption" type="LineEdit" parent="." groups=["menu_options"]]
+offset_left = 452.0
+offset_top = 140.0
+offset_right = 672.0
+offset_bottom = 266.0
+theme_override_styles/focus = ExtResource("3_p83nl")
+theme_override_styles/normal = ExtResource("5_yg6ns")
+text = "Play"
+alignment = 1
+editable = false
+selecting_enabled = false
+script = ExtResource("2_id2tn")
+
+[node name="ControlConfigurationOption" type="LineEdit" parent="." groups=["menu_options"]]
+offset_left = 453.0
+offset_top = 287.0
+offset_right = 673.0
+offset_bottom = 413.0
+theme_override_styles/focus = ExtResource("3_p83nl")
+theme_override_styles/normal = ExtResource("3_p83nl")
+text = "Configure Input Button"
+alignment = 1
+editable = false
+selecting_enabled = false
+script = ExtResource("1_p1kyo")
+
+[node name="VolumeSliderLabel" type="RichTextLabel" parent="."]
+offset_left = 522.0
+offset_top = 441.0
+offset_right = 742.0
+offset_bottom = 567.0
+scale = Vector2(1, 0.600001)
+text = "Volume
+Why the heck is this getting squished when I resize the label box"
+script = ExtResource("1_p1kyo")
+
+[node name="VolumeSliderOption" type="HSlider" parent="." groups=["menu_options"]]
+offset_left = 454.0
+offset_top = 463.0
+offset_right = 674.0
+offset_bottom = 479.0
+theme_override_styles/grabber_area = ExtResource("5_yg6ns")
+theme_override_styles/grabber_area_highlight = ExtResource("3_p83nl")
+value = 30.0
+editable = false
+scrollable = false
+script = ExtResource("2_st0sm")
