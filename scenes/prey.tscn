@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://buxvpgvxurhhg"]
+
+[ext_resource type="Texture2D" uid="uid://3geee8xgxv8x" path="res://art/entities/prey_ball.png" id="1_70ybk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2p2vr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_70ybk")
+}],
+"loop": true,
+"name": &"float",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_loevn"]
+radius = 34.0
+
+[node name="Prey" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2p2vr")
+animation = &"float"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_loevn")

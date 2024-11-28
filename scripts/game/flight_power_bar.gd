@@ -1,18 +1,15 @@
 extends ProgressBar
 
 #@onready var timer = $FlightTimer
-@onready var flight_charge_bar = $FlightCharge
+#@onready var flight_charge_bar = $FlightCharge
 
 var flight_charge = 0 : set = _set_charge
 
 func _set_charge(new_charge):
-	var prev_charge = flight_charge
+	#var prev_charge = flight_charge
 	value = new_charge 
-	
-	#if charge >= 0 and charge < 100:
-		#flight_charge_bar.value = 0
-	#if charge >= 100:
-		#flight_charge_bar.value = 100 
+	if new_charge >= 100:
+		value = 100
 
 #func init_flight_charge(_charge):
 	#charge = 0

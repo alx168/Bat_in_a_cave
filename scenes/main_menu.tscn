@@ -36,21 +36,11 @@ editable = false
 selecting_enabled = false
 script = ExtResource("5_8gjuh")
 
-[node name="VolumeSliderLabel" type="RichTextLabel" parent="."]
-offset_left = 522.0
-offset_top = 441.0
-offset_right = 742.0
-offset_bottom = 567.0
-scale = Vector2(1, 0.600001)
-text = "Volume
-Why the heck is this getting squished when I resize the label box"
-script = ExtResource("5_8gjuh")
-
 [node name="VolumeSliderOption" type="HSlider" parent="." groups=["menu_options"]]
-offset_left = 454.0
-offset_top = 463.0
-offset_right = 674.0
-offset_bottom = 479.0
+offset_left = 456.0
+offset_top = 446.0
+offset_right = 676.0
+offset_bottom = 462.0
 theme_override_styles/grabber_area = ExtResource("3_fi6my")
 theme_override_styles/grabber_area_highlight = ExtResource("2_lxy53")
 value = 30.0
@@ -58,7 +48,27 @@ editable = false
 scrollable = false
 script = ExtResource("6_lwehm")
 
+[node name="VolumeSliderLabel" type="RichTextLabel" parent="VolumeSliderOption"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.187
+anchor_right = 1.0
+anchor_bottom = 2.375
+offset_left = -1.0
+offset_top = -0.00799942
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.600001)
+theme_override_font_sizes/normal_font_size = 20
+text = "Volume
+"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_8gjuh")
+
 [node name="MouseInputBlockingControl" type="Control" parent="."]
+z_index = -1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1155.0

@@ -25,6 +25,7 @@ offset_right = 240.0
 offset_bottom = 25.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_km6y4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7east")
+step = 0.1
 value = 50.0
 show_percentage = false
 script = ExtResource("1_fk83v")
