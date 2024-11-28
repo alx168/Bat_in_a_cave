@@ -10,12 +10,6 @@
 [node name="MainMenuContainer" type="Node"]
 script = ExtResource("1_omsxw")
 
-[node name="MouseInputBlockingControl" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1155.0
-offset_bottom = 645.0
-
 [node name="StartLevelOption" type="LineEdit" parent="." groups=["menu_options"]]
 offset_left = 452.0
 offset_top = 140.0
@@ -63,3 +57,9 @@ value = 30.0
 editable = false
 scrollable = false
 script = ExtResource("2_st0sm")
+
+[node name="MouseInputBlockingControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 645.0

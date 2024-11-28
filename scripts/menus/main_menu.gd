@@ -16,7 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("button_press"):
+	if InputManager.poll_input(delta) == InputManager.InputType.TAPPED:
 		# highlight tne next menu option, and let the options
 		all_menu_options[highlighted_option_index].release_focus()
 		highlighted_option_index = (highlighted_option_index+1)%len(all_menu_options)
