@@ -12,6 +12,3 @@ func _process_option_held(held: bool, dTime: float) -> void:
 		pass
 	elif not option_is_highlighted and held:
 		pass
-
-func aaa():
-	print("hihihi")

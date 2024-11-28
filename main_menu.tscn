@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkhjjje8frf1a"]
+[gd_scene load_steps=5 format=3 uid="uid://bkhjjje8frf1a"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_omsxw"]
 [ext_resource type="Script" path="res://scripts/menus/control_configuration_option.gd" id="1_p1kyo"]
+[ext_resource type="Script" path="res://scripts/menus/start_level_option.gd" id="2_id2tn"]
 [ext_resource type="Script" path="res://scripts/menus/volume_option.gd" id="2_st0sm"]
 
 [node name="MainMenuContainer" type="Node"]
@@ -16,6 +17,7 @@ text = "Play"
 alignment = 1
 editable = false
 selecting_enabled = false
+script = ExtResource("2_id2tn")
 
 [node name="ControlConfigurationOption" type="LineEdit" parent="." groups=["menu_options"]]
 offset_left = 453.0

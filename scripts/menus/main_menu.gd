@@ -1,4 +1,3 @@
-@tool
 extends Node
 
 var all_menu_options: Array
@@ -14,6 +13,7 @@ func _ready():
 	print(len(all_menu_options))
 	all_menu_options[highlighted_option_index]._set_highlighted(true)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("button_press"):
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		all_menu_options[highlighted_option_index]._set_highlighted(false)
 		highlighted_option_index = (highlighted_option_index+1)%len(all_menu_options)
 		all_menu_options[highlighted_option_index]._set_highlighted(true)
-	else:
-		# assert(false, "TODO detect if the button was pressed _and_ held")
-		var held: bool = false # TODO detect if the button was pressed _and_ held
-		all_menu_options[highlighted_option_index]._process_option_held(held, delta)
+	#else:
+		## assert(false, "TODO detect if the button was pressed _and_ held")
+		#var held: bool = false # TODO detect if the button was pressed _and_ held
+		#all_menu_options[highlighted_option_index]._process_option_held(held, delta)
