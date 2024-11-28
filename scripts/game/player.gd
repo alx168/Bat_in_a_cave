@@ -7,17 +7,19 @@ var screen_size # Size of the game window.
 
 ### INPUTS ###
 var input_flap: bool = false
+var input_charge: bool = false
 
-### PHYSICS ###
+### PHYSICS ### https://www.youtube.com/watch?v=p3jDJ9FtTyM&t=58s
 var grounded: bool = false
 const flight_acceleration: float = -2
 const gravity: float = .1
-const terminal_fall_speed: float = 5
+const terminal_fall_speed: float = 10
 
 ### GAMEPLAY ###
 const max_flight_charge: float = 100
 var flight_charge: float = 0
 const flight_charge_step: float = 0.1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,26 +28,32 @@ func _ready() -> void:
 
 # handle inputs and visuals
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("button_press"):
+	var input_type: InputManager.InputType = InputManager.poll_input(delta)
+	
+	if input_type == InputManager.InputType.TAPPED:
 		input_flap = true
-	if Input.is_action_pressed("button_press") and flight_charge < max_flight_charge:
-		#testing flight values
-		flight_charge = flight_charge + flight_charge_step
-	#uncomment below if we want a decreasing bar effect
-	#elif not Input.is_action_pressed("button_press") and flight_charge >= 0:
-		#flight_charge = flight_charge - flight_charge_step
-	_set_flight_charge(flight_charge)
+	elif input_type == InputManager.InputType.HELD:
+		input_charge
 	
 func _physics_process(delta: float) -> void:
-	print(flight_charge)
 	if input_flap:
 		grounded = false
-		velocity += Vector2(0, flight_acceleration)
+		var rotation_degrees: float = 30 if velocity.x<0 else -30
+		velocity = velocity.rotated(deg_to_rad(rotation_degrees))
+		# Vector2(0, flight_acceleration)
 		input_flap = false
 	elif not grounded:
 		velocity += Vector2(0, gravity)
 		
-	velocity = velocity.clamp(Vector2(0, -100), Vector2(0, terminal_fall_speed))	
+	if input_charge:
+		print(flight_charge)
+		flight_charge = flight_charge + flight_charge_step
+		_set_flight_charge(flight_charge)
+	#uncomment below if we want a decreasing bar effect
+	#else:
+		#flight_charge = flight_charge - flight_charge_step
+		
+	velocity = Vector2(velocity.x, clamp(velocity.y, -2*terminal_fall_speed, terminal_fall_speed))	
 	var collisionInfo: KinematicCollision2D = move_and_collide(velocity)
 	
 	if collisionInfo != null:

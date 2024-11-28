@@ -313,7 +313,7 @@ sources/0 = SubResource("TileSetAtlasSource_aciv8")
 [node name="SceneRoot" type="Node"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(306, 504)
+position = Vector2(98, 75)
 script = ExtResource("1_pxigv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
