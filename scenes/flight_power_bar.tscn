@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dadcenx5wy85t"]
 
-[ext_resource type="Script" path="res://flight_power_bar.gd" id="1_fk83v"]
+[ext_resource type="Script" path="res://scripts/game/flight_power_bar.gd" id="1_fk83v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km6y4"]
 

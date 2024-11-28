@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 func poll_input(dTime: float) -> InputType:
 	# I think this implementation will work assuming
-	# there's only one call per frame
+	# there's only one consumer
 	if Input.is_action_pressed(INPUT_EVENT_NAME):
 		input_hold_duration += dTime
 		
