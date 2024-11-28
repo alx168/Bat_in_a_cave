@@ -8,7 +8,8 @@ const input_hold_threshold: float = .3 # https://www.reddit.com/r/gamedev/commen
 enum InputType {
 	NONE,
 	TAPPED,
-	HELD
+	HELD,
+	INDETERMINATE ## used if something is being input, and we can't yet tell if it's a tap or hold
 }  
 
 func _ready() -> void:
@@ -24,7 +25,7 @@ func poll_input(dTime: float) -> InputType:
 		return (
 			InputType.HELD 
 			if input_hold_duration > input_hold_threshold 
-			else InputType.NONE
+			else InputType.INDETERMINATE
 		)
 	else:
 		var ret: InputType = (

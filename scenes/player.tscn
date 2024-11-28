@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dxqdxf5isg6nd"]
+[gd_scene load_steps=13 format=4 uid="uid://dxqdxf5isg6nd"]
 
 [ext_resource type="Script" path="res://scripts/game/player.gd" id="1_pxigv"]
 [ext_resource type="Texture2D" uid="uid://7vfltxojds2x" path="res://art/entities/playerGrey_up1.png" id="2_eosvo"]
@@ -7,35 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c1kq6g75g4yeo" path="res://art/entities/playerGrey_walk2.png" id="5_w1jpw"]
 [ext_resource type="PackedScene" uid="uid://dadcenx5wy85t" path="res://scenes/flight_power_bar.tscn" id="6_hy2s1"]
 [ext_resource type="Texture2D" uid="uid://kbf18m2j0122" path="res://art/tiles/kenney_abstract-platformer/Tilesheet/tilesheet_complete.png" id="7_2d3c8"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5deev"]
-radius = 27.0
-height = 68.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dn5vy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_eosvo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_xcij6")
-}],
-"loop": true,
-"name": &"up",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_31yes")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_w1jpw")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aciv8"]
 texture = ExtResource("7_2d3c8")
@@ -310,10 +281,49 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_aciv8")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5deev"]
+radius = 27.0
+height = 68.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dn5vy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eosvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xcij6")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_31yes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w1jpw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_enitm"]
+_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
 [node name="SceneRoot" type="Node"]
 
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(340, 581)
+scale = Vector2(1.83777, 0.994938)
+tile_map_data = PackedByteArray("AAAGAAAAAAAQAAUAAAAFAAAAAAAQAAUAAAAEAAAAAAAQAAUAAAADAAAAAAAQAAUAAAACAAAAAAAQAAUAAAABAAAAAAAQAAUAAAAAAAAAAAAQAAUAAAD//wAAAAAQAAUAAAD+/wAAAAAQAAUAAAD9/wAAAAAQAAUAAAA=")
+tile_set = SubResource("TileSet_1kh8x")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(306, 504)
+position = Vector2(98, 75)
 script = ExtResource("1_pxigv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -339,8 +349,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(340, 581)
-scale = Vector2(1.83777, 0.994938)
-tile_map_data = PackedByteArray("AAAGAAAAAAAQAAUAAAAFAAAAAAAQAAUAAAAEAAAAAAAQAAUAAAADAAAAAAAQAAUAAAACAAAAAAAQAAUAAAABAAAAAAAQAAUAAAAAAAAAAAAQAAUAAAD//wAAAAAQAAUAAAD+/wAAAAAQAAUAAAD9/wAAAAAQAAUAAAA=")
-tile_set = SubResource("TileSet_1kh8x")
+[node name="AimIndicator" type="Line2D" parent="CharacterBody2D"]
+position = Vector2(-1, -5)
+points = PackedVector2Array(0, 0, 100, 0)
+width = 6.0
+width_curve = SubResource("Curve_enitm")
+default_color = Color(0.847399, 0.573973, 0.379979, 1)

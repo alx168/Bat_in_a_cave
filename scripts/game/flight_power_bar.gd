@@ -1,6 +1,6 @@
 extends ProgressBar
 
-@onready var timer = $FlightTimer
+#@onready var timer = $FlightTimer
 @onready var flight_charge_bar = $FlightCharge
 
 var flight_charge = 0 : set = _set_charge
