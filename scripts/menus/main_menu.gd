@@ -16,12 +16,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if InputManager.poll_input(delta) == InputManager.InputType.TAPPED:
-		# highlight tne next menu option, and let the options
+	var user_input: InputManager.InputType = InputManager.poll_input(delta)
+	
+	if user_input == InputManager.InputType.TAPPED:
+		# highlight tne next menu option, and let the options know
 		all_menu_options[highlighted_option_index].release_focus()
 		highlighted_option_index = (highlighted_option_index+1)%len(all_menu_options)
 		all_menu_options[highlighted_option_index].grab_focus()
-	#else:
-		## assert(false, "TODO detect if the button was pressed _and_ held")
-		#var held: bool = false # TODO detect if the button was pressed _and_ held
-		#all_menu_options[highlighted_option_index]._process_option_held(held, delta)
+	elif user_input == InputManager.InputType.HELD:
+		all_menu_options[highlighted_option_index]._process_option_held(delta)
