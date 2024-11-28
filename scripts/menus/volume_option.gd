@@ -8,7 +8,7 @@ extends MenuOption
 func _process_option_held(held: bool, dTime: float) -> void:
 	# TODO while option is selected, decrease the volume,
 	# but if the button is being held, (slowly) increase the volume
-	if option_is_highlighted and not held:
+	if has_focus() and not held:
 		pass
-	elif not option_is_highlighted and held:
+	elif not has_focus() and held:
 		pass

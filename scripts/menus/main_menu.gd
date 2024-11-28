@@ -11,16 +11,16 @@ func _ready():
 	all_menu_options = []
 	all_menu_options = get_tree().get_nodes_in_group("menu_options")
 	print(len(all_menu_options))
-	all_menu_options[highlighted_option_index]._set_highlighted(true)
+	all_menu_options[highlighted_option_index].grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("button_press"):
 		# highlight tne next menu option, and let the options
-		all_menu_options[highlighted_option_index]._set_highlighted(false)
+		all_menu_options[highlighted_option_index].release_focus()
 		highlighted_option_index = (highlighted_option_index+1)%len(all_menu_options)
-		all_menu_options[highlighted_option_index]._set_highlighted(true)
+		all_menu_options[highlighted_option_index].grab_focus()
 	#else:
 		## assert(false, "TODO detect if the button was pressed _and_ held")
 		#var held: bool = false # TODO detect if the button was pressed _and_ held
