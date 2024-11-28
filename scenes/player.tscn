@@ -339,6 +339,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
+[node name="AimIndicator" type="Line2D" parent="CharacterBody2D"]
+points = PackedVector2Array(0, 0, 1, 0)
+default_color = Color(0.847399, 0.573973, 0.379979, 1)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(340, 581)
 scale = Vector2(1.83777, 0.994938)
