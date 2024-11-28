@@ -17,4 +17,6 @@ func _process_option_held(dTime: float, held: bool) -> void:
 	else:
 		volume_float -= volume_change_rate*dTime
 		volume_slider.value = volume_float
+		
+	volume_float = clamp(volume_float, 0.0, 100.0)
 	

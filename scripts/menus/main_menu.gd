@@ -10,7 +10,6 @@ func _ready():
 	highlighted_option_index = 0
 	all_menu_options = []
 	all_menu_options = get_tree().get_nodes_in_group("menu_options")
-	print(len(all_menu_options))
 	all_menu_options[highlighted_option_index].grab_focus()
 
 

@@ -1,5 +1,6 @@
 extends Node
 
+const INPUT_EVENT_NAME: String = "button_press"
 var input: InputType
 var input_hold_duration: float
 const input_hold_threshold: float = .3 # https://www.reddit.com/r/gamedev/comments/mjdcrw/is_there_a_standard_length_of_time_to_determine/gtavk4s/
@@ -17,7 +18,7 @@ func _ready() -> void:
 func poll_input(dTime: float) -> InputType:
 	# I think this implementation will work assuming
 	# there's only one call per frame
-	if Input.is_action_pressed("button_press"):
+	if Input.is_action_pressed(INPUT_EVENT_NAME):
 		input_hold_duration += dTime
 		
 		return (
