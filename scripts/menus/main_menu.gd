@@ -23,5 +23,8 @@ func _process(delta: float) -> void:
 		all_menu_options[highlighted_option_index].release_focus()
 		highlighted_option_index = (highlighted_option_index+1)%len(all_menu_options)
 		all_menu_options[highlighted_option_index].grab_focus()
-	elif user_input == InputManager.InputType.HELD:
-		all_menu_options[highlighted_option_index]._process_option_held(delta)
+	else:
+		all_menu_options[highlighted_option_index]._process_option_held(
+			delta, 
+			user_input == InputManager.InputType.HELD	
+		)
