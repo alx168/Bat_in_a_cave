@@ -85,16 +85,11 @@ func _physics_process(delta: float) -> void:
 				tapped = false
 			else:
 				aim_direction = aim_direction.rotated(AIM_ROTATION_RATE*delta*aim_rotation_direction)
-				
-		#uncomment below if we want a decreasing bar effect
-		#else:
-			#flight_charge = flight_charge - FLIGHT_CHARGE_STEP
 	else: # not is_grounded
 		velocity += Vector2(0, GRAVITY)
 		
 		if tapped:
 			if flap_rotation_buffer >= FLAP_ROTATION_BUFFER_THRESHOLD:
-				print("flipping")
 				flight_rotation_degrees = 30 if velocity.x<0 else -30
 			velocity = velocity.rotated(deg_to_rad(flight_rotation_degrees))
 			tapped = false
@@ -105,7 +100,6 @@ func _physics_process(delta: float) -> void:
 		if held:
 			# TODO flap to slow down?
 			pass
-			
 			
 		velocity = Vector2(velocity.x, clamp(velocity.y, -2*TERMINAL_FALL_SPEED, TERMINAL_FALL_SPEED))	
 		
