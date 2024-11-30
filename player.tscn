@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c82blwfug0vtb" path="res://art/entities/playerGrey_up2.png" id="3_mbhhn"]
 [ext_resource type="Texture2D" uid="uid://brhs3i3aftj5u" path="res://art/entities/playerGrey_walk1.png" id="4_skl7a"]
 [ext_resource type="Texture2D" uid="uid://c1kq6g75g4yeo" path="res://art/entities/playerGrey_walk2.png" id="5_cncj6"]
-[ext_resource type="PackedScene" uid="uid://dadcenx5wy85t" path="res://scenes/flight_power_bar.tscn" id="6_rqcs4"]
+[ext_resource type="PackedScene" uid="uid://dadcenx5wy85t" path="res://scenes/displays/flight_power_bar.tscn" id="6_rqcs4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5deev"]
 radius = 27.0

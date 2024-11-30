@@ -5,6 +5,7 @@ extends CharacterBody2D
 var screen_size # Size of the game window.
 @onready var flight_charge_bar = $FlightBar
 @onready var aim_indicator: Line2D = $AimIndicator
+@onready var indicator_layer: CanvasLayer = $PlayerPerspective/IndicatorLayer
 
 ### INPUTS ###
 var TAP_INTERAL: float = .25
@@ -118,13 +119,13 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector2.ZERO
 
 ### STUFF FOR ECHO ABILITY
-var echo_ray = preload("res://scenes/echo_ray.tscn")
+var echo_ray = preload("res://scenes/displays/echo_ray.tscn")
 var echo_angles = range(-20, 21, 5)
 
 func shoot_echo(_initial_position: Vector2, _aim_direction: Vector2) -> void:
 	for angle in echo_angles:
 		var e = echo_ray.instantiate()
 		e._initialize(_initial_position, _aim_direction.rotated(deg_to_rad(angle)))
-		add_sibling(e)
+		indicator_layer.add_child(e)
 		
 	pass

@@ -3,7 +3,7 @@ extends CharacterBody2D
 const LIFESPAN: float = 5.0
 const SPEED: float = 3.0
 var timer: float = 0.0
-var echo_terrain_indicator = preload("res://scenes/echo_terrain_indicator.tscn")
+var echo_terrain_indicator = preload("res://scenes/displays/echo_terrain_indicator.tscn")
 	
 func _initialize(_position: Vector2, _direction: Vector2) -> void:
 	velocity = SPEED * _direction

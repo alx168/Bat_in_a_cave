@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://dxqdxf5isg6nd"]
+[gd_scene load_steps=10 format=4 uid="uid://dxqdxf5isg6nd"]
 
+[ext_resource type="Script" path="res://scripts/game_managers/level_manager.gd" id="1_qjpjd"]
 [ext_resource type="Texture2D" uid="uid://kbf18m2j0122" path="res://art/tiles/kenney_abstract-platformer/Tilesheet/tilesheet_complete.png" id="1_ubu7g"]
+[ext_resource type="PackedScene" uid="uid://cumja2csn64ov" path="res://scenes/displays/fog.tscn" id="2_8gp7a"]
 [ext_resource type="PackedScene" uid="uid://cta18avvklenv" path="res://player.tscn" id="2_d32d8"]
-[ext_resource type="PackedScene" uid="uid://buxvpgvxurhhg" path="res://scenes/prey.tscn" id="3_cjsbb"]
-[ext_resource type="Texture2D" uid="uid://cyqr3v3fox3x6" path="res://art/fog.png" id="4_wmlbc"]
+[ext_resource type="PackedScene" uid="uid://bpy6vvnnb7vsx" path="res://scenes/displays/hud.tscn" id="2_vw2sn"]
+[ext_resource type="PackedScene" uid="uid://bdh42vo60jnwn" path="res://scenes/displays/indicator_layer.tscn" id="3_51hfp"]
+[ext_resource type="PackedScene" uid="uid://buxvpgvxurhhg" path="res://scenes/entities/prey.tscn" id="3_cjsbb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aciv8"]
 texture = ExtResource("1_ubu7g")
@@ -283,6 +286,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_aciv8")
 
 [node name="SceneRoot" type="Node"]
+script = ExtResource("1_qjpjd")
 metadata/_edit_horizontal_guides_ = [412.0]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -291,11 +295,28 @@ scale = Vector2(1.83777, 0.994938)
 tile_map_data = PackedByteArray("AAAGAAAAAAAQAAUAAAAFAAAAAAAQAAUAAAAEAAAAAAAQAAUAAAADAAAAAAAQAAUAAAACAAAAAAAQAAUAAAABAAAAAAAQAAUAAAAAAAAAAAAQAAUAAAD//wAAAAAQAAUAAAD+/wAAAAAQAAUAAAD9/wAAAAAQAAUAAAD9//n/AAAGAAUAAAD+//n/AAAGAAUAAAD8/wAAAAAQAAUAAAD8////AAAQAAUAAAD8//7/AAAQAAUAAAD8//3/AAAQAAUAAAD8//z/AAAQAAUAAAD8//v/AAAQAAUAAAD8//r/AAAQAAUAAAD8//n/AAAQAAUAAAD8//j/AAAQAAUAAAD8//f/AAAQAAUAAAD8//b/AAAQAAUAAAD8//X/AAAQAAUAAAD8//T/AAAQAAUAAAD8//P/AAAQAAUAAAD8//L/AAAQAAUAAAD8//H/AAAQAAUAAAD8//D/AAAQAAUAAAD8/+//AAAQAAUAAAD8/+7/AAAQAAUAAAAGAP//AAAQAAUAAAAGAP7/AAAQAAUAAAAGAP3/AAAQAAUAAAAGAPz/AAAQAAUAAAAGAPv/AAAQAAUAAAAGAPr/AAAQAAUAAAAGAO//AAAQAAUAAAAGAO7/AAAQAAUAAAAGAO3/AAAQAAUAAAAGAPD/AAAQAAUAAAAGAPH/AAAQAAUAAAAGAPL/AAAQAAUAAAAGAPP/AAAQAAUAAAAGAPT/AAAQAAUAAAAGAPX/AAAQAAUAAAAGAPb/AAAQAAUAAAAGAPf/AAAQAAUAAAAGAPj/AAAQAAUAAAAGAPn/AAAQAAUAAAD8/+3/AAAQAAUAAAADAP3/AAAQAAUAAAAEAP3/AAAQAAUAAAAAAPb/AAAQAAUAAAABAPb/AAAQAAUAAAADAPP/AAAQAAUAAAAEAPL/AAAQAAUAAAAEAPP/AAAQAAUAAAD+//D/AAAQAAUAAAD///D/AAAQAAUAAAAAAPv/AAAQAAUAAAABAPv/AAAQAAUAAAAEAPj/AAAQAAUAAAAFAPj/AAAQAAUAAAD///P/AAAGAAUAAAD+//P/AAAHAAUAAAAAAPP/AAAIAAUAAAD///n/AAAIAAUAAAA=")
 tile_set = SubResource("TileSet_1kh8x")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_d32d8")]
+[node name="Player" parent="." instance=ExtResource("2_d32d8")]
 position = Vector2(113, -87)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("4_wmlbc")
+[node name="PlayerPerspective" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -113.0
+offset_top = 87.0
+offset_right = -73.0
+offset_bottom = 127.0
 
-[node name="Prey" parent="." instance=ExtResource("3_cjsbb")]
+[node name="FogLayer" parent="Player/PlayerPerspective" instance=ExtResource("2_8gp7a")]
+script = null
+
+[node name="HUDLayer" parent="Player/PlayerPerspective" instance=ExtResource("2_vw2sn")]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="IndicatorLayer" parent="Player/PlayerPerspective" instance=ExtResource("3_51hfp")]
+layer = 3
+follow_viewport_enabled = true
+
+[node name="Prey" parent="." groups=["prey"] instance=ExtResource("3_cjsbb")]
+z_index = -6
 position = Vector2(121, 49)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dadcenx5wy85t"]
 
-[ext_resource type="Script" path="res://scripts/game/flight_power_bar.gd" id="1_fk83v"]
+[ext_resource type="Script" path="res://scripts/displays/flight_power_bar.gd" id="1_wqmnw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km6y4"]
 
@@ -28,7 +28,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_7east")
 step = 0.1
 value = 50.0
 show_percentage = false
-script = ExtResource("1_fk83v")
+script = ExtResource("1_wqmnw")
 
 [node name="FlightCharge" type="ProgressBar" parent="."]
 z_index = -1

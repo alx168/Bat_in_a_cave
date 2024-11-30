@@ -1,52 +1,52 @@
 [gd_scene load_steps=7 format=3 uid="uid://bkhjjje8frf1a"]
 
-[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_ky277"]
-[ext_resource type="StyleBox" uid="uid://5gefmprixb1d" path="res://art/menu/button_focused.tres" id="2_lxy53"]
-[ext_resource type="StyleBox" uid="uid://6gvbqp75xg26" path="res://art/menu/button_normal.tres" id="3_fi6my"]
-[ext_resource type="Script" path="res://scripts/menus/start_level_option.gd" id="4_yrkhp"]
-[ext_resource type="Script" path="res://scripts/menus/control_configuration_option.gd" id="5_8gjuh"]
-[ext_resource type="Script" path="res://scripts/menus/volume_option.gd" id="6_lwehm"]
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_5401s"]
+[ext_resource type="StyleBox" uid="uid://5gefmprixb1d" path="res://art/menu/button_focused.tres" id="2_e58yk"]
+[ext_resource type="StyleBox" uid="uid://6gvbqp75xg26" path="res://art/menu/button_normal.tres" id="3_efnii"]
+[ext_resource type="Script" path="res://scripts/menus/start_level_option.gd" id="4_u4ew3"]
+[ext_resource type="Script" path="res://scripts/menus/control_configuration_option.gd" id="5_uoap7"]
+[ext_resource type="Script" path="res://scripts/menus/volume_option.gd" id="6_lmdq6"]
 
 [node name="MainMenuContainer" type="Node"]
-script = ExtResource("1_ky277")
+script = ExtResource("1_5401s")
 
 [node name="StartLevelOption" type="LineEdit" parent="." groups=["menu_options"]]
 offset_left = 452.0
 offset_top = 140.0
 offset_right = 672.0
 offset_bottom = 266.0
-theme_override_styles/focus = ExtResource("2_lxy53")
-theme_override_styles/normal = ExtResource("3_fi6my")
+theme_override_styles/focus = ExtResource("2_e58yk")
+theme_override_styles/normal = ExtResource("3_efnii")
 text = "Play"
 alignment = 1
 editable = false
 selecting_enabled = false
-script = ExtResource("4_yrkhp")
+script = ExtResource("4_u4ew3")
 
 [node name="ControlConfigurationOption" type="LineEdit" parent="." groups=["menu_options"]]
 offset_left = 453.0
 offset_top = 287.0
 offset_right = 673.0
 offset_bottom = 413.0
-theme_override_styles/focus = ExtResource("2_lxy53")
-theme_override_styles/normal = ExtResource("2_lxy53")
+theme_override_styles/focus = ExtResource("2_e58yk")
+theme_override_styles/normal = ExtResource("2_e58yk")
 text = "Configure Button (Space)"
 alignment = 1
 editable = false
 selecting_enabled = false
-script = ExtResource("5_8gjuh")
+script = ExtResource("5_uoap7")
 
 [node name="VolumeSliderOption" type="HSlider" parent="." groups=["menu_options"]]
 offset_left = 456.0
 offset_top = 446.0
 offset_right = 676.0
 offset_bottom = 462.0
-theme_override_styles/grabber_area = ExtResource("3_fi6my")
-theme_override_styles/grabber_area_highlight = ExtResource("2_lxy53")
+theme_override_styles/grabber_area = ExtResource("3_efnii")
+theme_override_styles/grabber_area_highlight = ExtResource("2_e58yk")
 value = 30.0
 editable = false
 scrollable = false
-script = ExtResource("6_lwehm")
+script = ExtResource("6_lmdq6")
 
 [node name="VolumeSliderLabel" type="RichTextLabel" parent="VolumeSliderOption"]
 layout_mode = 1
@@ -65,7 +65,7 @@ text = "Volume
 "
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("5_8gjuh")
+script = ExtResource("5_uoap7")
 
 [node name="MouseInputBlockingControl" type="Control" parent="."]
 z_index = -1

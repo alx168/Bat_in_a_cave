@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Bat In A Cave"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-InputManager="*res://scripts/input_manager.gd"
+InputManager="*res://scripts/game_managers/input_manager.gd"
 
 [input]
 
