@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-const LIFESPAN: float = 10.0
-const SPEED: float = 5.0
+const LIFESPAN: float = 3.0
+const MARKER_INDICATOR_LIFESPAN_BONUS: float = 2.0
+const SPEED: float = 15.0
 var timer: float = 0.0
 const echo_terrain_indicator = preload("res://scenes/displays/echo_terrain_marker.tscn")
 const echo_predator_indicator = preload("res://scenes/displays/echo_predator_marker.tscn")
@@ -19,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if timer >= LIFESPAN:
 		queue_free()
 	else:
-		var time_left: float = LIFESPAN - timer
+		var time_left: float = MARKER_INDICATOR_LIFESPAN_BONUS + LIFESPAN - timer
 		var collision: KinematicCollision2D = move_and_collide(velocity)
 		
 		if collision != null:

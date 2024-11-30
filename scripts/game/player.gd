@@ -60,12 +60,12 @@ func _collect_inputs(delta:float) -> void:
 		
 func _update_hud() -> void:	
 	if is_grounded:
-		flight_charge_bar.visible = true
-		flight_charge_bar.flight_charge = flight_charge
-		
 		aim_indicator.visible = true
 		aim_indicator.position = aim_direction*50
 		aim_indicator.points[1] = aim_indicator.position+aim_direction*50
+		
+		flight_charge_bar.visible = (flight_charge > 0.0)
+		flight_charge_bar.flight_charge = flight_charge
 	else:
 		flight_charge_bar.visible = false
 		aim_indicator.visible = false
