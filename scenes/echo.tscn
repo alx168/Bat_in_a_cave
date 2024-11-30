@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7rlhprwgsag8"]
+
+[ext_resource type="Script" path="res://scripts/game/echo.gd" id="1_3080g"]
+[ext_resource type="Texture2D" uid="uid://ycoro7vf4yff" path="res://art/tiles/kenney_abstract-platformer/PNG/Items/blueGem.png" id="2_5po0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nyu7"]
+radius = 1.0
+
+[node name="Echo" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_3080g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3nyu7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.06779, 1.11683)
+texture = ExtResource("2_5po0d")
