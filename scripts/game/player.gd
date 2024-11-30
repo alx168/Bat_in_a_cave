@@ -91,7 +91,7 @@ func _physics_process(delta: float) -> void:
 					aim_rotation_direction *= -1
 					tap_stack = 0
 				elif tap_stack>=2:
-					shoot_echo(50*aim_direction, aim_direction)
+					shoot_echo(position + 50*aim_direction, aim_direction)
 					tap_stack = 0
 			else:
 				aim_direction = aim_direction.rotated(AIM_ROTATION_RATE*delta*aim_rotation_direction)
@@ -118,14 +118,13 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector2.ZERO
 
 ### STUFF FOR ECHO ABILITY
-var echo = preload("res://scenes/echo.tscn")
+var echo_ray = preload("res://scenes/echo_ray.tscn")
 var echo_angles = range(-20, 21, 5)
-
 
 func shoot_echo(_initial_position: Vector2, _aim_direction: Vector2) -> void:
 	for angle in echo_angles:
-		var e = echo.instantiate()
+		var e = echo_ray.instantiate()
 		e._initialize(_initial_position, _aim_direction.rotated(deg_to_rad(angle)))
-		add_child(e)
+		add_sibling(e)
 		
 	pass
