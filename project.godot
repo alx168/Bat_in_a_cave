@@ -22,6 +22,7 @@ InputManager="*res://scripts/game_managers/input_manager.gd"
 [global_group]
 
 prey=""
+hazard="things that can kill you"
 
 [input]
 

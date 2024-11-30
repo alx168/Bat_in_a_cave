@@ -20,7 +20,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Predator" type="CharacterBody2D"]
+[node name="Predator" type="CharacterBody2D" groups=["hazard"]]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(82, -25)

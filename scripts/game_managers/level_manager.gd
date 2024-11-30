@@ -18,6 +18,10 @@ func _ready() -> void:
 func _refresh_hud() -> void:
 	hud._update_objective_counter(objective_found, objective_total)
 	
+func _die():
+	print("Hey, loser, you lost")
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	
 func _increment_objective_counter():
 	objective_found += 1
 	_refresh_hud()

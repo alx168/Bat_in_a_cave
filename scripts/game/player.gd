@@ -128,11 +128,11 @@ func _handle_collisions(_collision: KinematicCollision2D) -> void:
 		if collider is TileMapLayer:
 			is_grounded = true
 			velocity = Vector2.ZERO
-		elif collider is Prey:
+		elif 'prey' in collider.get_groups():
 			collider.queue_free()
 			level_manager._increment_objective_counter()
-			print("om nom nom")
-		
+		elif 'hazard' in collider.get_groups():
+			level_manager._die()
 
 ### STUFF FOR ECHO ABILITY
 var echo_ray = preload("res://scenes/displays/echo_ray.tscn")
