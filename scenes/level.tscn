@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dxqdxf5isg6nd"]
+[gd_scene load_steps=11 format=4 uid="uid://dxqdxf5isg6nd"]
 
 [ext_resource type="Script" path="res://scripts/game_managers/level_manager.gd" id="1_qjpjd"]
 [ext_resource type="Texture2D" uid="uid://kbf18m2j0122" path="res://art/tiles/kenney_abstract-platformer/Tilesheet/tilesheet_complete.png" id="1_ubu7g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpy6vvnnb7vsx" path="res://scenes/displays/hud.tscn" id="2_vw2sn"]
 [ext_resource type="PackedScene" uid="uid://bdh42vo60jnwn" path="res://scenes/displays/indicator_layer.tscn" id="3_51hfp"]
 [ext_resource type="PackedScene" uid="uid://buxvpgvxurhhg" path="res://scenes/entities/prey.tscn" id="3_cjsbb"]
+[ext_resource type="Script" path="res://scripts/game/prey.gd" id="8_5ipyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aciv8"]
 texture = ExtResource("1_ubu7g")
@@ -311,12 +312,16 @@ script = null
 
 [node name="HUDLayer" parent="Player/PlayerPerspective" instance=ExtResource("2_vw2sn")]
 layer = 2
-follow_viewport_enabled = true
 
 [node name="IndicatorLayer" parent="Player/PlayerPerspective" instance=ExtResource("3_51hfp")]
 layer = 3
 follow_viewport_enabled = true
 
-[node name="Prey" parent="." groups=["prey"] instance=ExtResource("3_cjsbb")]
+[node name="Prey" parent="." instance=ExtResource("3_cjsbb")]
 z_index = -6
 position = Vector2(121, 49)
+script = ExtResource("8_5ipyj")
+
+[node name="BonusPrey" parent="." instance=ExtResource("3_cjsbb")]
+position = Vector2(751, 333)
+script = ExtResource("8_5ipyj")
