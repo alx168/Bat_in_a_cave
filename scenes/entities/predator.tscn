@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvycpad6vuyti"]
 
-[ext_resource type="Texture2D" uid="uid://bgpy5k1xyx32r" path="res://art/entities/enemyFlyingAlt_1.png" id="1_povgm"]
-[ext_resource type="Texture2D" uid="uid://cq0vy282vad6u" path="res://art/entities/enemyFlyingAlt_2.png" id="2_dtc1u"]
+[ext_resource type="Texture2D" uid="uid://bgpy5k1xyx32r" path="res://art/entities/enemyFlyingAlt_1.png" id="1_77seo"]
+[ext_resource type="Texture2D" uid="uid://cq0vy282vad6u" path="res://art/entities/enemyFlyingAlt_2.png" id="2_y8de8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpjbj"]
 size = Vector2(94, 190)
@@ -10,10 +10,10 @@ size = Vector2(94, 190)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_povgm")
+"texture": ExtResource("1_77seo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dtc1u")
+"texture": ExtResource("2_y8de8")
 }],
 "loop": true,
 "name": &"patrol",

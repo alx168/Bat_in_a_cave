@@ -5,6 +5,7 @@ extends CharacterBody2D
 var screen_size # Size of the game window.
 @onready var flight_charge_bar = $FlightBar
 @onready var aim_indicator: Line2D = $AimIndicator
+@onready var indicator_layer: CanvasLayer = $PlayerPerspective/IndicatorLayer
 
 ### INPUTS ###
 var TAP_INTERAL: float = .25
@@ -29,6 +30,9 @@ var flight_charge: float = 0.0
 const AIM_ROTATION_RATE: float = deg_to_rad(90.0)
 var aim_direction: Vector2 = Vector2.RIGHT
 var aim_rotation_direction: int = 1
+
+### LEVEL STATE ### dunno if I like the player having to notify the level manager
+@onready var level_manager: Node = get_node("/root/SceneRoot")
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -113,18 +117,31 @@ func _physics_process(delta: float) -> void:
 			
 		velocity = Vector2(velocity.x, clamp(velocity.y, -2*TERMINAL_FALL_SPEED, TERMINAL_FALL_SPEED))	
 		
-		if move_and_collide(velocity) != null:
+	_handle_collisions(move_and_collide(velocity))
+			
+func _handle_collisions(_collision: KinematicCollision2D) -> void:
+	if (_collision == null):
+		return
+	else:
+		var collider = _collision.get_collider()
+		
+		if collider is TileMapLayer:
 			is_grounded = true
 			velocity = Vector2.ZERO
+		elif collider is Prey:
+			collider.queue_free()
+			level_manager._increment_objective_counter()
+			print("om nom nom")
+		
 
 ### STUFF FOR ECHO ABILITY
-var echo_ray = preload("res://scenes/echo_ray.tscn")
+var echo_ray = preload("res://scenes/displays/echo_ray.tscn")
 var echo_angles = range(-20, 21, 5)
 
 func shoot_echo(_initial_position: Vector2, _aim_direction: Vector2) -> void:
 	for angle in echo_angles:
 		var e = echo_ray.instantiate()
 		e._initialize(_initial_position, _aim_direction.rotated(deg_to_rad(angle)))
-		add_sibling(e)
+		indicator_layer.add_child(e)
 		
 	pass
