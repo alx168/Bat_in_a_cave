@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://sxm5w3nb8v15"]
-
-[ext_resource type="Texture2D" uid="uid://dsew28dhuxmt7" path="res://art/tiles/kenney_abstract-platformer/PNG/Items/greenGem.png" id="1_81eoh"]
-[ext_resource type="Script" path="res://scripts/displays/echo_terrain_indicator.gd" id="2_rakjl"]
-
-[node name="EchoTerrainIndicator" type="Sprite2D"]
-scale = Vector2(1, 0.24)
-texture = ExtResource("1_81eoh")
-script = ExtResource("2_rakjl")

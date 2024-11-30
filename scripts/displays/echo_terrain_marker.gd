@@ -1,9 +1,10 @@
-extends Sprite2D
+extends Node2D
 
-const LIFESPAN: float = 5.0
+var lifespan: float = 5.0
 var timer: float = 0.0
 	
-func _initialize(_position: Vector2, _surface_normal: Vector2) -> void:
+func _initialize(_lifespan: float, _position: Vector2, _surface_normal: Vector2) -> void:
+	lifespan = _lifespan
 	position = _position
 	rotation = _surface_normal.angle_to(Vector2.UP)
 
@@ -11,5 +12,5 @@ func _initialize(_position: Vector2, _surface_normal: Vector2) -> void:
 func _physics_process(delta: float) -> void:
 	timer += delta
 	
-	if timer >= LIFESPAN:
+	if timer >= lifespan:
 		queue_free()

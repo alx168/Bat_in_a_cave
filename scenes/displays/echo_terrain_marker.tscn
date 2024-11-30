@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://sxm5w3nb8v15"]
+
+[ext_resource type="Script" path="res://scripts/displays/echo_terrain_marker.gd" id="1_e2man"]
+[ext_resource type="Texture2D" uid="uid://ycoro7vf4yff" path="res://art/tiles/kenney_abstract-platformer/PNG/Items/blueGem.png" id="2_pmktb"]
+
+[node name="EchoTerrainMarker" type="Node2D"]
+script = ExtResource("1_e2man")
+
+[node name="MarkerSprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.24)
+texture = ExtResource("2_pmktb")

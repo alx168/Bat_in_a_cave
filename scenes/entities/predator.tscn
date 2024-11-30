@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq0vy282vad6u" path="res://art/entities/enemyFlyingAlt_2.png" id="2_y8de8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpjbj"]
-size = Vector2(94, 190)
+size = Vector2(71, 186)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhl24"]
 animations = [{
@@ -24,11 +24,9 @@ animations = [{
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(82, -25)
 shape = SubResource("RectangleShape2D_dpjbj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(87, -25)
 sprite_frames = SubResource("SpriteFrames_fhl24")
 animation = &"patrol"
 frame = 1

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx0ixnvaoqwyq"]
+
+[ext_resource type="Texture2D" uid="uid://bt1yqqbb770sv" path="res://art/tiles/kenney_abstract-platformer/PNG/Items/redGem.png" id="1_w3rqo"]
+[ext_resource type="Script" path="res://scripts/displays/echo_creature_marker.gd" id="2_1rctc"]
+
+[node name="EchoPredatorMarker" type="Node2D"]
+script = ExtResource("2_1rctc")
+
+[node name="MarkerSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("1_w3rqo")

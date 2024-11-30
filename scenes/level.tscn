@@ -326,3 +326,5 @@ position = Vector2(751, 333)
 
 [node name="Predator" parent="." instance=ExtResource("8_am6xu")]
 position = Vector2(589, -30)
+scale = Vector2(1.00425, 1)
+collision_mask = 0
