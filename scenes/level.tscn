@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dxqdxf5isg6nd"]
+[gd_scene load_steps=7 format=4 uid="uid://dxqdxf5isg6nd"]
 
 [ext_resource type="Texture2D" uid="uid://kbf18m2j0122" path="res://art/tiles/kenney_abstract-platformer/Tilesheet/tilesheet_complete.png" id="1_ubu7g"]
 [ext_resource type="PackedScene" uid="uid://cta18avvklenv" path="res://player.tscn" id="2_d32d8"]
 [ext_resource type="PackedScene" uid="uid://buxvpgvxurhhg" path="res://scenes/prey.tscn" id="3_cjsbb"]
+[ext_resource type="Texture2D" uid="uid://cyqr3v3fox3x6" path="res://art/fog.png" id="4_wmlbc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aciv8"]
 texture = ExtResource("1_ubu7g")
@@ -292,6 +293,9 @@ tile_set = SubResource("TileSet_1kh8x")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_d32d8")]
 position = Vector2(113, -87)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("4_wmlbc")
 
 [node name="Prey" parent="." instance=ExtResource("3_cjsbb")]
 position = Vector2(121, 49)
