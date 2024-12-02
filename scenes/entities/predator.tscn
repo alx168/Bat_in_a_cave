@@ -1,33 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvycpad6vuyti"]
+[gd_scene load_steps=6 format=3 uid="uid://dvycpad6vuyti"]
 
-[ext_resource type="Texture2D" uid="uid://bgpy5k1xyx32r" path="res://art/entities/enemyFlyingAlt_1.png" id="1_77seo"]
-[ext_resource type="Texture2D" uid="uid://cq0vy282vad6u" path="res://art/entities/enemyFlyingAlt_2.png" id="2_y8de8"]
+[ext_resource type="Script" path="res://scripts/game/predator.gd" id="1_brsrg"]
+[ext_resource type="Texture2D" uid="uid://3prcrrpag76b" path="res://art/entities/predator_box.png" id="2_700xy"]
+[ext_resource type="Texture2D" uid="uid://ct265lo2gkvdt" path="res://art/entities/predator_box2.png" id="3_w1jwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpjbj"]
-size = Vector2(71, 186)
+size = Vector2(64, 63)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhl24"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_77seo")
+"texture": ExtResource("2_700xy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_y8de8")
+"texture": ExtResource("3_w1jwj")
 }],
 "loop": true,
 "name": &"patrol",
-"speed": 5.0
+"speed": 0.75
 }]
 
 [node name="Predator" type="CharacterBody2D" groups=["hazard"]]
 collision_layer = 8
+script = ExtResource("1_brsrg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_dpjbj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fhl24")
 animation = &"patrol"
-frame = 1
-frame_progress = 0.0342118
+frame_progress = 0.596975

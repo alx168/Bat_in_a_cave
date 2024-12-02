@@ -6,6 +6,7 @@ var screen_size # Size of the game window.
 @onready var flight_charge_bar = $FlightBar
 @onready var aim_indicator: Line2D = $AimIndicator
 @onready var indicator_layer: CanvasLayer = $PlayerPerspective/IndicatorLayer
+@onready var audio_stream = $AudioStreamPlayer2D
 
 ### INPUTS ###
 var TAP_INTERAL: float = .25
@@ -77,6 +78,7 @@ func _process(delta: float) -> void:
 # handle state and physics
 func _physics_process(delta: float) -> void:
 	if is_grounded:
+		audio_stream.stop()
 		if held:
 			flight_charge += FLIGHT_CHARGE_STEP
 		elif flight_charge > 0.0:
@@ -101,6 +103,7 @@ func _physics_process(delta: float) -> void:
 				aim_direction = aim_direction.rotated(AIM_ROTATION_RATE*delta*aim_rotation_direction)
 	else: # not is_grounded
 		velocity += Vector2(0, GRAVITY)
+		audio_stream.play()
 		
 		if tap_stack>0:
 			if flap_rotation_buffer >= FLAP_ROTATION_BUFFER_THRESHOLD:

@@ -1,21 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://buxvpgvxurhhg"]
+[gd_scene load_steps=6 format=3 uid="uid://buxvpgvxurhhg"]
 
-[ext_resource type="Texture2D" uid="uid://3geee8xgxv8x" path="res://art/entities/prey_ball.png" id="1_70ybk"]
 [ext_resource type="Script" path="res://scripts/game/prey.gd" id="1_ylchc"]
+[ext_resource type="Texture2D" uid="uid://i1ompoeoobmy" path="res://art/entities/prey_ball (2).png" id="2_5g43k"]
+[ext_resource type="Texture2D" uid="uid://df0ykw66kkhgk" path="res://art/entities/prey_ball (1).png" id="3_gy6bc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2p2vr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_70ybk")
+"texture": ExtResource("2_5g43k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gy6bc")
 }],
 "loop": true,
 "name": &"float",
-"speed": 5.0
+"speed": 0.75
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_loevn"]
-radius = 34.0
+radius = 35.0
 
 [node name="Prey" type="CharacterBody2D" groups=["prey"]]
 collision_layer = 4
@@ -24,6 +28,7 @@ script = ExtResource("1_ylchc")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2p2vr")
 animation = &"float"
+frame_progress = 0.893764
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_loevn")

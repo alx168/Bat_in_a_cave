@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq0vy282vad6u"
-path="res://.godot/imported/enemyFlyingAlt_2.png-68b4b928e6d133f504f7ed8a1dd3eb97.ctex"
+uid="uid://i1ompoeoobmy"
+path="res://.godot/imported/prey_ball (2).png-f91898f6b4b3fe2eccd1c11609afbdd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/entities/enemyFlyingAlt_2.png"
-dest_files=["res://.godot/imported/enemyFlyingAlt_2.png-68b4b928e6d133f504f7ed8a1dd3eb97.ctex"]
+source_file="res://art/entities/prey_ball (2).png"
+dest_files=["res://.godot/imported/prey_ball (2).png-f91898f6b4b3fe2eccd1c11609afbdd5.ctex"]
 
 [params]
 

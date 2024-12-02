@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 InputManager="*res://scripts/game_managers/input_manager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 prey=""

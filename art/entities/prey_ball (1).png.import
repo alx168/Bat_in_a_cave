@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7vfltxojds2x"
-path="res://.godot/imported/playerGrey_up1.png-4a37fe3c1ba22501712dfbf731fcf39f.ctex"
+uid="uid://df0ykw66kkhgk"
+path="res://.godot/imported/prey_ball (1).png-a923675c0e9d4ba595d1378c6112e4a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/entities/playerGrey_up1.png"
-dest_files=["res://.godot/imported/playerGrey_up1.png-4a37fe3c1ba22501712dfbf731fcf39f.ctex"]
+source_file="res://art/entities/prey_ball (1).png"
+dest_files=["res://.godot/imported/prey_ball (1).png-a923675c0e9d4ba595d1378c6112e4a1.ctex"]
 
 [params]
 

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://g01mbsvgg33o"]
+
+[node name="EchoLocation" type="Node2D"]

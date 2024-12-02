@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brbpps34lyhxl"
-path="res://.godot/imported/enemyWalking_2.png-a975c9a63fa96e07e998ff22801f6c7b.ctex"
+uid="uid://3prcrrpag76b"
+path="res://.godot/imported/predator_box.png-4a26fa7bf4b1dd9cbb428c77c089546e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/entities/enemyWalking_2.png"
-dest_files=["res://.godot/imported/enemyWalking_2.png-a975c9a63fa96e07e998ff22801f6c7b.ctex"]
+source_file="res://art/entities/predator_box.png"
+dest_files=["res://.godot/imported/predator_box.png-4a26fa7bf4b1dd9cbb428c77c089546e.ctex"]
 
 [params]
 

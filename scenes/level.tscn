@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/game_managers/level_manager.gd" id="1_qjpjd"]
 [ext_resource type="Texture2D" uid="uid://kbf18m2j0122" path="res://art/tiles/kenney_abstract-platformer/Tilesheet/tilesheet_complete.png" id="1_ubu7g"]
 [ext_resource type="PackedScene" uid="uid://cumja2csn64ov" path="res://scenes/displays/fog.tscn" id="2_8gp7a"]
-[ext_resource type="PackedScene" uid="uid://cta18avvklenv" path="res://player.tscn" id="2_d32d8"]
+[ext_resource type="PackedScene" uid="uid://bfy14a1auy04p" path="res://scenes/entities/player.tscn" id="2_d32d8"]
 [ext_resource type="PackedScene" uid="uid://bpy6vvnnb7vsx" path="res://scenes/displays/hud.tscn" id="2_vw2sn"]
 [ext_resource type="PackedScene" uid="uid://bdh42vo60jnwn" path="res://scenes/displays/indicator_layer.tscn" id="3_51hfp"]
 [ext_resource type="PackedScene" uid="uid://buxvpgvxurhhg" path="res://scenes/entities/prey.tscn" id="3_cjsbb"]
@@ -293,19 +293,19 @@ metadata/_edit_horizontal_guides_ = [412.0]
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(340, 581)
 scale = Vector2(1.83777, 0.994938)
-tile_map_data = PackedByteArray("AAAGAAAAAAAQAAUAAAAFAAAAAAAQAAUAAAAEAAAAAAAQAAUAAAADAAAAAAAQAAUAAAACAAAAAAAQAAUAAAABAAAAAAAQAAUAAAAAAAAAAAAQAAUAAAD//wAAAAAQAAUAAAD+/wAAAAAQAAUAAAD9/wAAAAAQAAUAAAD9//n/AAAGAAUAAAD+//n/AAAGAAUAAAD8/wAAAAAQAAUAAAD8////AAAQAAUAAAD8//7/AAAQAAUAAAD8//3/AAAQAAUAAAD8//z/AAAQAAUAAAD8//v/AAAQAAUAAAD8//r/AAAQAAUAAAD8//n/AAAQAAUAAAD8//j/AAAQAAUAAAD8//f/AAAQAAUAAAD8//b/AAAQAAUAAAD8//X/AAAQAAUAAAD8//T/AAAQAAUAAAD8//P/AAAQAAUAAAD8//L/AAAQAAUAAAD8//H/AAAQAAUAAAD8//D/AAAQAAUAAAD8/+//AAAQAAUAAAD8/+7/AAAQAAUAAAAGAP//AAAQAAUAAAAGAP7/AAAQAAUAAAAGAP3/AAAQAAUAAAAGAPz/AAAQAAUAAAAGAPv/AAAQAAUAAAAGAPr/AAAQAAUAAAAGAO//AAAQAAUAAAAGAO7/AAAQAAUAAAAGAO3/AAAQAAUAAAAGAPD/AAAQAAUAAAAGAPH/AAAQAAUAAAAGAPL/AAAQAAUAAAAGAPP/AAAQAAUAAAAGAPT/AAAQAAUAAAAGAPX/AAAQAAUAAAAGAPb/AAAQAAUAAAAGAPf/AAAQAAUAAAAGAPj/AAAQAAUAAAAGAPn/AAAQAAUAAAD8/+3/AAAQAAUAAAADAP3/AAAQAAUAAAAEAP3/AAAQAAUAAAAAAPb/AAAQAAUAAAABAPb/AAAQAAUAAAADAPP/AAAQAAUAAAAEAPL/AAAQAAUAAAAEAPP/AAAQAAUAAAD+//D/AAAQAAUAAAD///D/AAAQAAUAAAAAAPv/AAAQAAUAAAABAPv/AAAQAAUAAAAEAPj/AAAQAAUAAAAFAPj/AAAQAAUAAAD///P/AAAGAAUAAAD+//P/AAAHAAUAAAAAAPP/AAAIAAUAAAD///n/AAAIAAUAAAA=")
+tile_map_data = PackedByteArray("AAAGAAAAAAAQAAUAAAAFAAAAAAAQAAUAAAAEAAAAAAAQAAUAAAADAAAAAAAQAAUAAAACAAAAAAAQAAUAAAABAAAAAAAQAAUAAAAAAAAAAAAQAAUAAAD//wAAAAAQAAUAAAD+/wAAAAAQAAUAAAD9/wAAAAAQAAUAAAD9//n/AAAGAAUAAAD+//n/AAAGAAUAAAD8/wAAAAAQAAUAAAD8////AAAQAAUAAAD8//7/AAAQAAUAAAD8//3/AAAQAAUAAAD8//z/AAAQAAUAAAD8//v/AAAQAAUAAAD8//r/AAAQAAUAAAD8//n/AAAQAAUAAAD8//j/AAAQAAUAAAD8//f/AAAQAAUAAAD8//b/AAAQAAUAAAD8//X/AAAQAAUAAAD8//T/AAAQAAUAAAD8//P/AAAQAAUAAAD8//L/AAAQAAUAAAD8//H/AAAQAAUAAAD8//D/AAAQAAUAAAD8/+//AAAQAAUAAAD8/+7/AAAQAAUAAAAGAP//AAAQAAUAAAAGAP7/AAAQAAUAAAAGAP3/AAAQAAUAAAAGAPz/AAAQAAUAAAAGAPv/AAAQAAUAAAAGAPr/AAAQAAUAAAAGAO//AAAQAAUAAAAGAO7/AAAQAAUAAAAGAO3/AAAQAAUAAAAGAPD/AAAQAAUAAAAGAPH/AAAQAAUAAAAGAPL/AAAQAAUAAAAGAPP/AAAQAAUAAAAGAPT/AAAQAAUAAAAGAPX/AAAQAAUAAAAGAPb/AAAQAAUAAAAGAPf/AAAQAAUAAAAGAPj/AAAQAAUAAAAGAPn/AAAQAAUAAAD8/+3/AAAQAAUAAAADAP3/AAAQAAUAAAAEAP3/AAAQAAUAAAADAPP/AAAQAAUAAAAEAPL/AAAQAAUAAAAEAPP/AAAQAAUAAAD+//D/AAAQAAUAAAD///D/AAAQAAUAAAAAAPv/AAAQAAUAAAABAPv/AAAQAAUAAAAEAPj/AAAQAAUAAAAFAPj/AAAQAAUAAAD///P/AAAGAAUAAAD+//P/AAAHAAUAAAAAAPP/AAAIAAUAAAD///n/AAAIAAUAAAACAPb/AAAQAAUAAAADAPb/AAAQAAUAAAA=")
 tile_set = SubResource("TileSet_1kh8x")
 
 [node name="Player" parent="." instance=ExtResource("2_d32d8")]
-position = Vector2(113, -87)
+position = Vector2(274, -101)
 
 [node name="PlayerPerspective" type="Control" parent="Player"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -113.0
-offset_top = 87.0
-offset_right = -73.0
-offset_bottom = 127.0
+offset_left = -129.0
+offset_top = 92.0
+offset_right = -89.0
+offset_bottom = 132.0
 
 [node name="FogLayer" parent="Player/PlayerPerspective" instance=ExtResource("2_8gp7a")]
 script = null
@@ -315,6 +315,7 @@ layer = 2
 
 [node name="IndicatorLayer" parent="Player/PlayerPerspective" instance=ExtResource("3_51hfp")]
 layer = 3
+visible = false
 follow_viewport_enabled = true
 
 [node name="Prey" parent="." instance=ExtResource("3_cjsbb")]
@@ -325,6 +326,6 @@ position = Vector2(121, 49)
 position = Vector2(751, 333)
 
 [node name="Predator" parent="." instance=ExtResource("8_am6xu")]
-position = Vector2(589, -30)
+position = Vector2(82, -99)
 scale = Vector2(1.00425, 1)
 collision_mask = 0

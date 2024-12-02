@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cumja2csn64ov"]
+[gd_scene load_steps=2 format=3 uid="uid://cumja2csn64ov"]
 
-[ext_resource type="Script" path="res://scripts/displays/hud.gd" id="1_8eaqb"]
 [ext_resource type="Texture2D" uid="uid://cyqr3v3fox3x6" path="res://art/fog.png" id="2_5p53x"]
 
 [node name="FogLayer" type="CanvasLayer"]
-script = ExtResource("1_8eaqb")
 
 [node name="Fog" type="Sprite2D" parent="."]
-position = Vector2(577, 325)
+position = Vector2(572, 319)
+scale = Vector2(1.01128, 1.01852)
 texture = ExtResource("2_5p53x")
